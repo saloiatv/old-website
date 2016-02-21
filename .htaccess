@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    Redirect /avenidaheliodorosalgado http://saloia.tv/v/renF8AHM7K8
+    Redirect /ruamiguelbombarda http://saloia.tv/v/T9pEb2gVryP
+    Redirect /ruaalfredodacosta http://saloia.tv/v/4gNz23AYgBM
+    
+    
+    RewriteRule ^(empresas)$ /pages/empresas.php [L]
+	RewriteRule ^(mapa)$ /pages/mapa.php [L]
+	RewriteRule ^(pessoas)$ /pages/pessoas.php [L]
+
+    RewriteRule ^(historia|cultura|eventos|politica|autarquias|social|entrevistas|opiniao|desporto)$ /pages/arquivo.php?categoria=$1 [L]
+
+   RewriteRule ^v/(.*)$ /pages/video.php?video=$1 [L]
+    RewriteRule ^procurar/(.*)$ /pages/procurar.php?procurar=$1 [L]
+    RewriteRule ^empresas/(.*)$ /pages/empresas.php?empresa=$1 [L]
+    
+    RewriteRule ^(contactos)$ /pages/contactos.php [L]
+	RewriteRule ^(sobre)$ /pages/sobre.php [L]
+	RewriteRule ^(publicidade)$ /pages/publicidade.php [L]
+	    
+    ErrorDocument 404 /pages/404.php
+    
+</IfModule>
